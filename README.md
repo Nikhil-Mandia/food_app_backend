@@ -176,10 +176,4 @@ Frontend:
 | `/orders/:orderId` | Live tracking |
 | `/history` | Orders placed in this browser |
 
-## Deploying later
 
-- Put the API on a long-running host such as Render or Railway. Serverless would stop the status timers.
-- Put the frontend on Vercel or Netlify.
-- Set the API `CLIENT_ORIGIN` to the deployed frontend URL.
-- Set the frontend `VITE_API_URL` to `https://<your-api>/api`, then rebuild the frontend.
-- Point `MONGODB_URI` at Atlas.
