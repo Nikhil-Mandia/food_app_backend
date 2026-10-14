@@ -8,8 +8,8 @@ const { notFound, errorHandler } = require('./middleware/errorHandler');
 
 function createApp() {
   const app = express();
-  app.use(helmet());
-  app.use(cors({ origin: process.env.CLIENT_ORIGIN || 'http://localhost:5173' }));
+  app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
+  app.use(cors());
   app.use(express.json({ limit: '10kb' }));
   if (process.env.NODE_ENV !== 'test') app.use(rateLimit({ windowMs: 60_000, limit: 100 }));
 
